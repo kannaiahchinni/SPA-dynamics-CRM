@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { AstService } from './ast-service.service';
+import { XrmIntegrationService } from './xrm-integration.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,7 @@ export class AppComponent {
   program: any;
   keys: any;
 
-  constructor(private astService: AstService) {}
+  constructor(private astService: AstService, private xrmService: XrmIntegrationService) {}
 
   getASTJSON() {
     this.astService.getASTJSON(this.textAreaControl.value).subscribe(data => {

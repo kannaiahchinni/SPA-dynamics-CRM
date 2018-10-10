@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AstService } from './ast-service.service';
+import { XrmIntegrationService } from './xrm-integration.service';
 
 @NgModule({
   declarations: [
