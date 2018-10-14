@@ -1,23 +1,37 @@
 <mat-toolbar color="primary">
-  <span>{{ title }}</span>
-    <span class="example-fill-remaining-space"></span>
-    <span>  </span>
+  <mat-toolbar-row>
+    <mat-icon class="">menu</mat-icon>
+    <span class="title">{{ title }}</span>
+  </mat-toolbar-row>
 </mat-toolbar>
 <div class="flex-container">
-  <div class="left-container">
-      <div class="flex-text-area">
-              <textarea mdInput class="text-area-control" placeholder="Leave a comment" [formControl]="textAreaControl"></textarea>
-      </div>
-      <div class="flex-button-area">
-          <button mat-raised-button color="primary" (click)="getASTJSON()"> Submit Code </button>
-        </div>
+    <div class="left-container box-shadow">
+  <mat-tab-group>
+    <mat-tab label="Working Leads"> Working Leads </mat-tab>
+    <mat-tab label="Leads to Disposition"> Leads to Disposition </mat-tab>
+    <mat-tab label="Follow Up Activities"> Follow Up Activities </mat-tab>
+    <mat-tab label="Deal Registration"> Deal Registration </mat-tab>
+    <mat-tab label="Prospecting Queue"> Prospecting Queue </mat-tab>
+  </mat-tab-group>
   </div>
   <div class="right-container">
-    <table>
-      <tr *ngFor="let item of keys">
-        <td>{{ item }}</td><td> {{ output[item].join(",") }} </td>
-      </tr>
-      </table>
-  </div>
-</div>
 
+  </div>
+
+
+  <!--<div class="left-container">
+
+    <div class="flex-text-area">
+      <form class="example-form">
+      <mat-input-container> 
+        <input mdInput placeholder="Just a placeholder" name="search">
+         </mat-input-container> 
+       <mat-form-field>
+          <input mdInput type="text" [formControl]="search" [(ngModel)]="search" placeholder="write your entity" />
+      </mat-form-field> 
+
+        <button mat-raised-button color="accent" (click)="getXrmObject()"> Submit Code </button>
+      </form>
+    </div>
+  </div> -->
+</div>

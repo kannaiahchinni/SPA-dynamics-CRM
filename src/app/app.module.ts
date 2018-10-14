@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MatButtonModule, MatCheckboxModule, MatToolbarModule, MatFormFieldModule, MatInputModule
+  MatButtonModule, MatCheckboxModule, MatToolbarModule, MatFormFieldModule, MatInputModule,
+  MatTabsModule,
+  MatIconModule
 } from '@angular/material';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { AstService } from './ast-service.service';
@@ -19,10 +21,11 @@ import { XrmIntegrationService } from './xrm-integration.service';
     BrowserAnimationsModule,
     BrowserModule,
     MatToolbarModule,
-    MatButtonModule, MatFormFieldModule, MatInputModule,
-    HttpModule, ReactiveFormsModule
+    MatButtonModule, MatFormFieldModule, MatInputModule, MatIconModule,
+    HttpModule, ReactiveFormsModule, FormsModule, MatTabsModule
   ],
   providers: [AstService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AppComponent]
 })
 export class AppModule { }
