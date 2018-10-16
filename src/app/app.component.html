@@ -5,33 +5,27 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <div class="flex-container">
+   
     <div class="left-container box-shadow">
   <mat-tab-group>
-    <mat-tab label="Working Leads"> Working Leads </mat-tab>
-    <mat-tab label="Leads to Disposition"> Leads to Disposition </mat-tab>
-    <mat-tab label="Follow Up Activities"> Follow Up Activities </mat-tab>
-    <mat-tab label="Deal Registration"> Deal Registration </mat-tab>
-    <mat-tab label="Prospecting Queue"> Prospecting Queue </mat-tab>
+    <mat-tab label="Working Leads"> 
+        <app-table (showCount) = "showCountValue($event)" [fields]="leadFields" [table]="'lead'" [type]="0" [filter]="leadFilter"></app-table>
+    </mat-tab>
+    <mat-tab label="Leads to Disposition">
+        <app-table [fields]="leadFields" [table]="'lead'" [type]="1" [filter]="leadFilter"></app-table> 
+    </mat-tab>
+    <mat-tab label="Follow Up Activities"> 
+        <app-table [fields]="activityFields" [table]="activityTableName" [type]="" [filter]="activityFilter"></app-table>  
+    </mat-tab>
+    <mat-tab label="Deal Registration"> 
+        <app-table [fields]="leadFields" [table]="'lead'" [type]="3" [filter]="leadFilter"></app-table> 
+    </mat-tab>
+    <mat-tab label="Prospecting Queue"> 
+        <app-table [fields]="leadFields" [table]="'lead'" [type]="4" [filter]="leadFilter"></app-table>
+    </mat-tab>
   </mat-tab-group>
   </div>
   <div class="right-container">
-
+     <app-widget></app-widget>
   </div>
-
-
-  <!--<div class="left-container">
-
-    <div class="flex-text-area">
-      <form class="example-form">
-      <mat-input-container> 
-        <input mdInput placeholder="Just a placeholder" name="search">
-         </mat-input-container> 
-       <mat-form-field>
-          <input mdInput type="text" [formControl]="search" [(ngModel)]="search" placeholder="write your entity" />
-      </mat-form-field> 
-
-        <button mat-raised-button color="accent" (click)="getXrmObject()"> Submit Code </button>
-      </form>
-    </div>
-  </div> -->
 </div>

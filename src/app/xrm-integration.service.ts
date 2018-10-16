@@ -8,14 +8,15 @@ export class XrmIntegrationService {
 
   private static xrmParent: any = null;
   private static xrmParentChecked = false;
-  private xrmApi:any = null;
-  
-
+  private xrmApi: any = null;
   constructor() {
     //
   }
 
 
+  setXrmApi(api) {
+    this.xrmApi = api;
+  }
 
   checkXrmObject() {
     if (('parent' in window) && 'Xrm' in window.parent && this.xrmApi == null) {
@@ -40,8 +41,15 @@ export class XrmIntegrationService {
       value ===  '00000000-0000-0000-0000-000000000000';
   }
 
-  getLeads(type) {
-      let filterQuery = '';
+  getEntityData(type, table, fields, filter) {
+      const filterQuery = '$filter=' + filter + type;
+      const selectQuery = '$select=' + fields.join(',');
+      return this.xrmApi.WebApi.retrieveMultipleRecords(table, filterQuery + '&'  + selectQuery, 10);
+      /*.then(function success(data) {
+        console.log(data);
+      }, function errorf(error) {
+        console.log(error);
+      });*/
   }
 
 

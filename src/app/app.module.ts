@@ -12,10 +12,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AstService } from './ast-service.service';
 import { XrmIntegrationService } from './xrm-integration.service';
+import { TableComponent } from './table/table.component';
+import { WidgetComponent } from './widget/widget.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TableComponent,
+    WidgetComponent
   ],
   imports: [
     BrowserAnimationsModule,
