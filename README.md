@@ -1,4 +1,8 @@
-# SNOWCodeTree
+# Sample angular application to deploy in CRM
+
+## use below command to generate the build file for production version 
+
+`ng build --prod --aot --output-hashing noe `.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
